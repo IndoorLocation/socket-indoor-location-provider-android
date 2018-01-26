@@ -45,7 +45,7 @@ public class MapActivity extends AppCompatActivity {
     }
 
     private void setupLocationProvider() {
-        socketIndoorLocationProvider = new SocketIndoorLocationProvider(this, "YOUR_SERVER_SOCKET_ADDRESS");
+        socketIndoorLocationProvider = new SocketIndoorLocationProvider(this, "http://192.168.128.11:3003");
         mapwizePlugin.setLocationProvider(socketIndoorLocationProvider);
     }
 
