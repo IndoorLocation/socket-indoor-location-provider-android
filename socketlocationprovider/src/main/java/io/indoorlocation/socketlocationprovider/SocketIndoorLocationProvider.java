@@ -70,7 +70,7 @@ public class SocketIndoorLocationProvider extends IndoorLocationProvider {
 
     private void refreshIp() {
         String newIp = this.wifiIpAddress();
-        if (newIp != null && !newIp.equals(clientIp)) {
+        if (newIp != null && socket == null) {
             clientIp = newIp;
             this.destroySocket();
             this.initSocket();
@@ -168,16 +168,19 @@ public class SocketIndoorLocationProvider extends IndoorLocationProvider {
         if(started) {
             return;
         }
-        refreshIp();
-        refreshIpTimer = new Timer();
-        refreshIpTimer.scheduleAtFixedRate(refreshIpTimerTask, 0, 10000);
         started = true;
+        refreshIp();
+        if (refreshIpTimer == null) {
+            refreshIpTimer = new Timer();
+            refreshIpTimer.scheduleAtFixedRate(refreshIpTimerTask, 0, 10000);
+        }
     }
 
     @Override
     public void stop() {
         if (started) {
             refreshIpTimer.cancel();
+            refreshIpTimer.purge();
             destroySocket();
             started = false;
         }
