@@ -24,7 +24,9 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation('io.mapwize.indoormaps:MapwizeForMapbox:1.1.6@aar') {
+        exclude group: 'com.github.IndoorLocation', module: 'indoor-location-android'
         transitive = true
     }
+    implementation 'com.github.IndoorLocation:indoor-location-android:1.0.5'
     implementation project(path: ':socketlocationprovider')
 }
