@@ -3,7 +3,6 @@ package io.indoorlocation.socketlocationprovider;
 import android.content.Context;
 import android.location.Location;
 import android.net.wifi.WifiManager;
-import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;

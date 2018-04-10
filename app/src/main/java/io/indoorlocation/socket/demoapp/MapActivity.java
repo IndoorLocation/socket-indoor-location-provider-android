@@ -28,7 +28,7 @@ public class MapActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Mapbox.getInstance(this, "pk.eyJ1IjoibWFwd2l6ZSIsImEiOiJjamNhYnN6MjAwNW5pMnZvMnYzYTFpcWVxIn0.veTCqUipGXCw8NwM2ep1Xg");// PASTE YOU MAPBOX API KEY HERE !!! This is a demo key. It is not allowed to use it for production. The key might change at any time without notice. Get your key by signing up at mapbox.com
+        Mapbox.getInstance(this, "pk.eyJ1IjoibWFwd2l6ZSIsImEiOiJjamNhYnN6MjAwNW5pMnZvMnYzYTFpcWVxIn0.veTCqUipGXCw8NwM2ep1Xg");//  This is a demo key. It is not allowed to use it for production. The key might change at any time without notice. Get your key by signing up at mapbox.com
 
         setContentView(R.layout.activity_map);
 
@@ -45,7 +45,7 @@ public class MapActivity extends AppCompatActivity {
     }
 
     private void setupLocationProvider() {
-        socketIndoorLocationProvider = new SocketIndoorLocationProvider(this, "http://192.168.128.11:3003");
+        socketIndoorLocationProvider = new SocketIndoorLocationProvider(this, "PASTE YOUR SERVER URL HERE");
         mapwizePlugin.setLocationProvider(socketIndoorLocationProvider);
     }
 
